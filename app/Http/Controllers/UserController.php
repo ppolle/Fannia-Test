@@ -28,7 +28,7 @@ class UserController extends Controller
     	for($i=1;$i<=$noOfWeeks;$i++){
     		$newDate = date('Y-m-d', strtotime($current_date ."+ 6 days"));
     		$weeklyUsers = User::where('created_at','>=',$current_date)->where('created_at','<=',$newDate)->count();
-    		$onboardingStages=[0,20,40,50,70,90,99,100];
+    		$onboardingStages=[0,20,40,50,70,90,99];
     		$percentageOfUsers=[];
     		foreach ($onboardingStages as $stage) {
     			$numberOfUsersOnStage= User::where('created_at','>=',$current_date)
